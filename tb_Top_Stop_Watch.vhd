@@ -72,35 +72,30 @@ begin
 
         -- Simula pressionar o botão de iniciar (start_btn)
         start_btn <= '1';
-        wait for 100 ns;
+        wait for 7000 ns;
+
+      
         start_btn <= '0';
-
-        -- Aguarda 1 segundo (100 * 10 ms = 1 segundo simulado)
-        wait for 1 ms;
-
         -- Simula pressionar o botão de parar (stop_btn)
         stop_btn <= '1';
-        wait for 100 ns;
+        wait for 10000 ns;
         stop_btn <= '0';
+        wait for 100000 ns;
+        stop_btn <= '1';
+        wait for 7000 ns;
 
-        -- Aguarda um momento e reseta novamente
-        wait for 500 ns;
-        rst_in <= '1';
-        wait for 50 ns;
-        rst_in <= '0';
-
+        
         -- Testa o botão de dividir (split_btn)
         start_btn <= '1';
-        wait for 100 ns;
-        start_btn <= '0';
+        wait for 7000 ns;
         
         wait for 500 ns;
         split_btn <= '1';
-        wait for 100 ns;
+        wait for 1000 ns;
         split_btn <= '0';
 
         -- Aguarda o final da simulação
-        wait for 2 ms;
+        wait for 10000 ms;
 
         -- Finaliza a simulação
         wait;

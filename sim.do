@@ -12,10 +12,10 @@ vcom -work work ClockDivisor.vhd
 vcom -work work DiviserCounter.vhd
 vcom -work work StateMachine.vhd
 vcom -work work TopWatch.vhd
-vcom -work work tb_top_Stop_Watch.vhd
+vcom -work work tb_Top_Stop_Watch.vhd
 
 # Realiza a simulação do testbench 'tb_top_Stop_Watch' com a opção de otimização e precisão de tempo em nanosegundos
-vsim -voptargs=+acc=lprn -t ns work.tb_top_Stop_Watch
+vsim -voptargs=+acc=lprn -t ns work.tb_Top_Stop_Watch
 
 # Suprime os avisos padrão durante a simulação
 set StdArithNoWarnings 1
@@ -25,4 +25,4 @@ set StdVitalGlitchNoWarnings 1
 do wave.do 
 
 # Roda a simulação por 10000 microsegundos
-run 10000 us
+run 1000 us

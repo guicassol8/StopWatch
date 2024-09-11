@@ -32,6 +32,10 @@ begin
             seconds         <= 0;
             minutes         <= 0;
             hours           <= 0;
+            hour_count <= (others => '0');
+            minute_count <= (others => '0');
+            segund_count <= (others => '0');
+            hundredth_count <= (others => '0');        
             counting_enabled <= '0';
         elsif rising_edge(clk) then
             if start = '1' then

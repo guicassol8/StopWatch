@@ -55,13 +55,12 @@ architecture Behavioral of top_Stop_Watch is
             return_count    : in  STD_LOGIC;
             hour_count      : out STD_LOGIC_VECTOR(7 downto 0);
             minute_count    : out STD_LOGIC_VECTOR(7 downto 0);
-            second_count    : out STD_LOGIC_VECTOR(7 downto 0);
+            segund_count    : out STD_LOGIC_VECTOR(7 downto 0);
             hundredth_count : out STD_LOGIC_VECTOR(7 downto 0)
         );
     end component;
 
 begin
-
     -- Instância do StateMachine
     state_machine_inst : StateMachine
         Port map (
@@ -91,11 +90,11 @@ begin
             reset           => reset_out,
             pulse_in        => pulse_in,
             start           => start_out,
-            stopp            => stop_out,
+            stopp            => stop_out,  
             return_count    => split_out,
             hour_count      => hour_count,
             minute_count    => minute_count,
-            second_count    => second_count,
+            segund_count    => second_count,
             hundredth_count => hundredth_count
         );
 
